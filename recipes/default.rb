@@ -12,7 +12,7 @@ package 'unzip' do
 end
 
 remote_file "#{Chef::Config[:file_cache_path]}/serf.zip" do
-  source "https://dl.bintray.com/mitchellh/serf/" + node[:serf][:version] + "_linux_amd64.zip"
+  source "https://dl.bintray.com/mitchellh/serf/" + node[:serf][:version] + "_linux_" + node[:serf][:arch] + ".zip"
 end
 
 execute 'unzip serf' do
